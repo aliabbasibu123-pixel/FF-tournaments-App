@@ -1,0 +1,32 @@
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    namespace "com.example.ff_tournament_hub"
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.example.ff_tournament_hub"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-auth:22.3.0'
+    implementation 'com.google.firebase:firebase-firestore:24.10.0'
+    implementation 'com.google.firebase:firebase-storage:20.3.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
